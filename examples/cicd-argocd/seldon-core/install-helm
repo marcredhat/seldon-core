@@ -12,7 +12,7 @@ if [ ! -f "${STARTUP_DIR}/../settings.sh" ]; then
 fi
 source ${STARTUP_DIR}/../settings.sh
 
-KUBECTL="kubectl --context=${KUBE_CONTEXT}"
+KUBECTL="oc"
 
 ${KUBECTL} -n kube-system create sa tiller --dry-run -o yaml | ${KUBECTL} apply -f -
 ${KUBECTL} create clusterrolebinding tiller --clusterrole cluster-admin --serviceaccount=kube-system:tiller --dry-run -o yaml | ${KUBECTL} apply -f -
