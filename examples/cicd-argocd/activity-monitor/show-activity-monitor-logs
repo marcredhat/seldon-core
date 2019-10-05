@@ -8,7 +8,7 @@ STARTUP_DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 source ${STARTUP_DIR}/../settings.sh
 
-KUBECTL="kubectl --context=${KUBE_CONTEXT}"
+KUBECTL="oc"
 
-${KUBECTL} logs -f $(kubectl --context="${KUBE_CONTEXT}" get pods -n default -l app=activity-monitor -o jsonpath='{.items[0].metadata.name}') -n default
+${KUBECTL} logs -f $(oc --context="${KUBE_CONTEXT}" get pods -n default -l app=activity-monitor -o jsonpath='{.items[0].metadata.name}') -n default
 

@@ -8,7 +8,7 @@ STARTUP_DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 source ${STARTUP_DIR}/../settings.sh
 
-KUBECTL="kubectl --context=${KUBE_CONTEXT}"
+KUBECTL="oc"
 
 ${KUBECTL} create namespace argocd --dry-run -o yaml|${KUBECTL} apply -f -
 

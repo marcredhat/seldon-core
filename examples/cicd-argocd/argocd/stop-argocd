@@ -8,7 +8,7 @@ STARTUP_DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 source ${STARTUP_DIR}/../settings.sh
 
-KUBECTL="kubectl --context=${KUBE_CONTEXT}"
+KUBECTL="oc"
 
 ${KUBECTL} delete -n argocd -f "https://raw.githubusercontent.com/argoproj/argo-cd/${ARGOCD_VERSION}/manifests/install.yaml" --ignore-not-found=true
 

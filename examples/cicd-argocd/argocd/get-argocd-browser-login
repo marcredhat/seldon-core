@@ -9,7 +9,7 @@ STARTUP_DIR="$( cd "$( dirname "$0" )" && pwd )"
 source ${STARTUP_DIR}/../settings.sh
 source ${STARTUP_DIR}/get-argocd-server-url
 
-KUBECTL="kubectl --context=${KUBE_CONTEXT}"
+KUBECTL="oc"
 
 ADMIN_PASSWORD=$(${KUBECTL} get pods -n argocd -l app.kubernetes.io/name=argocd-server -o name | cut -d'/' -f 2)
 

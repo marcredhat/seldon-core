@@ -8,7 +8,7 @@ STARTUP_DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 source ${STARTUP_DIR}/settings.sh
 
-KUBECTL="kubectl --context=${KUBE_CONTEXT}"
+KUBECTL="oc"
 
 ${KUBECTL} rollout status deployment.apps/argo-ui -n argo -w
 ${KUBECTL} rollout status deployment.apps/workflow-controller -n argo -w

@@ -9,7 +9,7 @@ STARTUP_DIR="$( cd "$( dirname "$0" )" && pwd )"
 source ${STARTUP_DIR}/../settings.sh
 source ${STARTUP_DIR}/get-jenkins-url
 
-KUBECTL="kubectl --context=${KUBE_CONTEXT}"
+KUBECTL="oc"
 
 #printf $(${KUBECTL} get secret --namespace jenkins jenkins -o jsonpath="{.data.jenkins-admin-password}" | base64 --decode);echo
 

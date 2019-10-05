@@ -8,8 +8,8 @@ STARTUP_DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 source ${STARTUP_DIR}/../settings.sh
 
-KUBECTL="kubectl --context=${KUBE_CONTEXT}"
+KUBECTL="oc"
 
 NAMESPACE_NAME=jenkins
-${KUBECTL} logs -f $(kubectl --context="${KUBE_CONTEXT}" get pods -n ${NAMESPACE_NAME} -l app=jenkins -o jsonpath='{.items[0].metadata.name}') -n ${NAMESPACE_NAME}
+${KUBECTL} logs -f $(oc --context="${KUBE_CONTEXT}" get pods -n ${NAMESPACE_NAME} -l app=jenkins -o jsonpath='{.items[0].metadata.name}') -n ${NAMESPACE_NAME}
 

@@ -8,7 +8,9 @@ STARTUP_DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 source ${STARTUP_DIR}/../settings.sh
 
-KUBECTL="kubectl --context=${KUBE_CONTEXT}"
+KUBECTL="oc"
 
-POD_NAME=$(${KUBECTL} get pods -l app=docker-private-registry -n default |sed -e '1d'|awk '{print $1}') && ${KUBECTL} port-forward ${POD_NAME} 5000:5000 -n default
+#POD_NAME=$(${KUBECTL} get pods -l app=docker-private-registry -n default |sed -e '1d'|awk '{print $1}') && ${KUBECTL} port-forward ${POD_NAME} 5000:5000 -n default
 
+POD_NAME=oc get pods -l app=docker-private-registry -n default |sed -e '1d'|awk '{print $1}'
+oc port-forward $POD_NAME  -n default 5000:5000 

@@ -8,7 +8,7 @@ STARTUP_DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 source ${STARTUP_DIR}/../settings.sh
 
-KUBECTL="kubectl --context=${KUBE_CONTEXT}"
+KUBECTL="oc"
 
 helm delete --kube-context="${KUBE_CONTEXT}" seldon-core --purge || echo "ignore not found"
 helm delete --kube-context="${KUBE_CONTEXT}" seldon-gateway --purge || echo "ignore not found"

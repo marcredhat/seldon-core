@@ -8,7 +8,7 @@ STARTUP_DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 source ${STARTUP_DIR}/../settings.sh
 
-KUBECTL="kubectl --context=${KUBE_CONTEXT}"
+KUBECTL="oc"
 
 ${KUBECTL} apply -f ${STARTUP_DIR}/docker-private-registry.json -n default
 ${KUBECTL} rollout status deploy/docker-private-registry-deployment -n default

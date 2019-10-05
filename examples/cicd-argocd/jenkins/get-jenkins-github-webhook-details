@@ -8,7 +8,7 @@ STARTUP_DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 source ${STARTUP_DIR}/../settings.sh
 
-KUBECTL="kubectl --context=${KUBE_CONTEXT}"
+KUBECTL="oc"
 
 EXTERNAL_IP=$(${KUBECTL} get svc -n jenkins jenkins -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 

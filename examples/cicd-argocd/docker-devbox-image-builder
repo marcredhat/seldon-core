@@ -11,7 +11,7 @@ source ${STARTUP_DIR}/settings.sh
 IMAGE_VERSION=0.1
 IMAGE_NAME="gsunner/s2i-tools"
 
-docker run --rm -it \
+podman  run --rm -it \
     -v /var/run/docker.sock:/var/run/docker.sock \
     -v "${MODEL_SOURCE_FILES_DIR}:/cicd-demo-model-source-files" \
     ${IMAGE_NAME}:${IMAGE_VERSION} sh

@@ -9,7 +9,7 @@ STARTUP_DIR="$( cd "$( dirname "$0" )" && pwd )"
 source ${STARTUP_DIR}/../settings.sh
 SELDON_CORE_DIR=${STARTUP_DIR}/../../..
 
-KUBECTL="kubectl --context=${KUBE_CONTEXT}"
+KUBECTL="oc"
 
 # add seldon crd access to admin role
  ${KUBECTL} apply -f ${STARTUP_DIR}/seldon-aggregate-to-admin.json

@@ -8,7 +8,7 @@ STARTUP_DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 source ${STARTUP_DIR}/../settings.sh
 
-KUBECTL="kubectl --context=${KUBE_CONTEXT}"
+KUBECTL="oc"
 
 ${KUBECTL} port-forward $(${KUBECTL} get pods -n default -l app=seldon-apiserver-container-app -o jsonpath='{.items[0].metadata.name}') -n default 8080:8080
 
